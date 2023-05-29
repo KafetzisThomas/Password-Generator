@@ -6,16 +6,16 @@
 
 import secrets, string
 
-# Define the alphabet
-letters, digits, special_chars = string.ascii_letters, string.digits, string.punctuation
-alphabet = letters + digits + special_chars
+def generate():
+  """Return a generated password string"""
+  letters, digits, special_chars = string.ascii_letters, string.digits, string.punctuation
+  alphabet = letters + digits + special_chars  # Define the alphabet
 
-# Set password length
-pwd_length = int(input("\nEnter password length: "))
+  pwd_length = int(input("\nEnter password length: "))  # Set password length
 
-# Generate a password string
-password = ''
-for i in range(pwd_length):
-  password += ''.join(secrets.choice(alphabet))
+  password = ''
+  for _ in range(pwd_length):
+    password += ''.join(secrets.choice(alphabet))  # Generate a password string
+  return password
 
-print(f"Generated password: {password}")
+print(f"Generated password: {generate()}")
