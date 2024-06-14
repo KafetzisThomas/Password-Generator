@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-# Project Title: Pass-Generator (https://github.com/KafetzisThomas/Pass-Generator)
+# Project Title: pass-generator (https://github.com/KafetzisThomas/pass-generator)
 # Author / Project Owner: KafetzisThomas (https://github.com/KafetzisThomas)
 
 import string
@@ -29,23 +29,3 @@ def generate_password(length, include_letters, include_digits, include_special_c
     for _ in range(int(length)):
         password += "".join(secrets.choice(alphabet))
     return password
-
-
-if __name__ == "__main__":
-    length = input("Enter password length: ")
-    include_letters = input("Include letters(y/N)? ")
-    include_digits = input("Include digits(y/N): ")
-    include_special_chars = input("Include special chars(y/N): ")
-
-    if length.upper() == "N":
-        length = False
-    if include_letters.upper() == "N":
-        include_letters = False
-    if include_digits.upper() == "N":
-        include_digits = False
-    if include_special_chars.upper() == "N":
-        include_special_chars = False
-
-    print(
-        f"Generated password: {generate_password(length, include_letters, include_digits, include_special_chars)}"
-    )
