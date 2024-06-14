@@ -1,1 +1,1 @@
-# pass-generator
+# pass_generator
